@@ -1,0 +1,3 @@
+[submodule "server/qp2p_frontend"]
+	path = server/qp2p_frontend
+	url = https://github.com/Benedictnno/QuickTrader.git
