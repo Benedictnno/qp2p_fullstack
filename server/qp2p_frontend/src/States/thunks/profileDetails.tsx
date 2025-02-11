@@ -17,7 +17,7 @@ export const ProfilesDetails = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/user/details",
+        "/api/v1/user/details",
         {
           businessName: profilesDetails.businessName,
           accountName: profilesDetails.accountName,
@@ -98,7 +98,7 @@ export const UpdateProfilesDetails = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/user/details",
+        "/api/v1/user/details",
         {
           businessName: UpdateProfilesDetails.businessName,
           accountName: UpdateProfilesDetails.accountName,

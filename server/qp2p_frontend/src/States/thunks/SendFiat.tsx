@@ -18,7 +18,7 @@ export const sendFiat = createAsyncThunk(
       console.log({...Details});
 
       const response = await axios.post(
-        "http://localhost:5000/api/v1/verifyTransactionAndSendFiat",
+        "/api/v1/verifyTransactionAndSendFiat",
         {
           ...Details,
         }

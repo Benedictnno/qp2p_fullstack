@@ -72,10 +72,10 @@ const SingleProfilePage: React.FC = () => {
   // Environment variables
   const publicKey =
     process.env.REACT_APP_PAYSTACK_PUBLIC_KEY || "pk_test_1234567890";
-  const API_BASE_URL =
-    process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+  // const API_BASE_URL =
+  //   process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
-  console.log(process.env.REACT_APP_PAYSTACK_PUBLIC_KEY);
+
   const { userData, loading } = useSelector(
     (state: RootState) => state.getBuyerUserData as BuyerUserData
   );
@@ -138,7 +138,7 @@ const SingleProfilePage: React.FC = () => {
     const quantity = amount / userData?.tonRate;
 
     try {
-      await axios.post(`${API_BASE_URL}/api/v1/fiat/fund`, {
+      await axios.post(`/api/v1/fiat/fund`, {
         amt: amount,
         user: vendorWalletId,
         email,
@@ -147,7 +147,7 @@ const SingleProfilePage: React.FC = () => {
         quantity,
       });
 
-      await axios.post(`${API_BASE_URL}/api/v1/crypto/send`, {
+      await axios.post(`/api/v1/crypto/send`, {
         to: customersAddress,
         value: quantity,
         user: { _id: vendorWalletId },

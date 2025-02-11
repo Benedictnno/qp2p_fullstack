@@ -7,7 +7,7 @@ export const transactions = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/transactions",
+        "/api/v1/transactions",
         {
           withCredentials: true,
         }

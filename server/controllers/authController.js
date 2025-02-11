@@ -43,9 +43,9 @@ lastName:user.lastName
   const refreshToken = generateRefreshToken(setUser);
 
   res.cookie("accessToken", accessToken, {
-    //  sameSite: 'None',
+     sameSite: 'None',
     httpOnly: true,
-    secure: false, // Use only with HTTPS
+    secure: true, // Use only with HTTPS
   });
 
  
@@ -155,11 +155,12 @@ const login = (req, res) => {
   const refreshToken = generateRefreshToken(user);
 
   res.cookie("accessToken", accessToken, {
-    //  sameSite: 'None',
+     sameSite: 'None',
     httpOnly: true,
-    secure: false, // Use only with HTTPS
+    secure: true, // Use only with HTTPS
   });
 
+  
   res.json({ refreshToken });
 };
 

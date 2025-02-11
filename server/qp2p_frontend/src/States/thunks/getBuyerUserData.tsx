@@ -8,7 +8,7 @@ export const getBuyerUserData = createAsyncThunk(
   async (profilesId:string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/user/details/${profilesId}`
+        `/api/v1/user/details/${profilesId}`
       );
       return response;
     } catch (error: any) {

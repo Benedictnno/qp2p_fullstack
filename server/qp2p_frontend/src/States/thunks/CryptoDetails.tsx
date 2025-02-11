@@ -6,7 +6,7 @@ export const TonAddress = createAsyncThunk(
   async (id: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/v1/crypto/TonAddress/${id}`,
+        `/api/v1/crypto/TonAddress/${id}`,
         {
           withCredentials: true,
         }
@@ -22,7 +22,7 @@ export const TonMnemonics = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/crypto/TonMnemonic",
+        "/api/v1/crypto/TonMnemonic",
         {
           withCredentials: true,
         }

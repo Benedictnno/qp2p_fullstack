@@ -10,7 +10,7 @@ export const LoginUser = createAsyncThunk(
   async (login: { email: string; password: string }, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/auth/login",
+        "/api/v1/auth/login",
         { email: login.email, password: login.password },
         { withCredentials: true }
       );
@@ -38,7 +38,7 @@ export const RegisterUser = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/v1/auth/register",
+        "/api/v1/auth/register",
         {
           email: login.email,
           password: login.password,

@@ -6,7 +6,7 @@ export const getAllBanks = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/fiat/banks",
+        "/api/v1/fiat/banks",
         {
           withCredentials: true,
         }
@@ -28,7 +28,7 @@ export const verifyBank = createAsyncThunk(
       console.log(bankDetails);
 
       const response = await axios.post(
-        "http://localhost:5000/api/v1/fiat/fund/verify",
+        "/api/v1/fiat/fund/verify",
         {
           accountNumber: bankDetails.accountNumber,
           bankCode: bankDetails.bankCode,

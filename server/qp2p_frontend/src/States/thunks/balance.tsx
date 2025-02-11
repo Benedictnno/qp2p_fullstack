@@ -6,7 +6,7 @@ export const userBalances = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/v1/fiat/fund",
+        "/api/v1/fiat/fund",
         {
   withCredentials: true,
 }

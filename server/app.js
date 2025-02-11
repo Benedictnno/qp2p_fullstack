@@ -22,10 +22,7 @@ import { fileURLToPath } from "url";
 
 app.use(helmet());
 app.use(
-  cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
-    credentials: true, // Allow cookies
-  })
+  cors()
 );
 app.use(xss());
 app.use(mongoSanitize());

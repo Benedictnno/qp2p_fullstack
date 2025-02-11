@@ -60,7 +60,7 @@ export const verifySendersWallet = createAsyncThunk<
 
     try {
       const response = await axios.post<VerifyWalletResponse>(
-        "http://localhost:5000/api/v1/crypto/verify",
+        "/api/v1/crypto/verify",
         {
           customersAddress,
           value,
