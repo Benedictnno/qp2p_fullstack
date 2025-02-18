@@ -9,7 +9,7 @@ const LogOut = async (navigate: NavigateFunction): Promise<void> => {
   try {
     // Send the logout request to the server
     await axios.post(
-      `http://localhost:5000/api/v1/auth/logout`,
+      `https://qp2p.onrender.com/api/v1/auth/logout`,
       {},
       { withCredentials: true }
     );

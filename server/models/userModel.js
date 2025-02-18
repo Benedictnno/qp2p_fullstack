@@ -7,7 +7,7 @@ const UserSchema = new Schema({
   password: { type: String, required: true },
   refreshToken: { type: String },
   role: { type: String, enum: ["user", "admin"], default: "user" }, // Role field
- verified:{type:Boolean}
+  verified: { type: Boolean, default: false },
 });
 
 export default model("User", UserSchema);

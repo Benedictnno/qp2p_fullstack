@@ -17,6 +17,9 @@ const authorize = (roles) => (req, res, next) => {
     if (!roles.includes(user.role)) {
       return res.status(403).json({ message: "Forbidden: Access denied" });
     }
+    // if (!user.verified) {
+    //   return res.status(404).json({ message: "Forbidden: Access denied , acount not verified" });
+    // }
 
     req.user = user; // Pass user details to the next middleware
     next();
