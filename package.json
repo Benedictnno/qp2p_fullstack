@@ -2,12 +2,12 @@
   "name": "tonwallet",
   "version": "1.0.0",
   "main": "index.js",
-  "type": "module" ,
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/app.js",
     "dev": "nodemon server/app.js",
-    "build":"yarn install --prefix ./qp2p_frontend && npm run build --prefix ./qp2p_frontend && yarn install"
+    "build": "yarn install --prefix ./qp2p_frontend && npm run build --prefix ./qp2p_frontend && yarn install"
   },
   "keywords": [],
   "author": "",
@@ -41,6 +41,7 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "punycode": "^2.3.1",
+    "resend": "^4.1.2",
     "tonweb": "^0.0.66",
     "uuid": "^11.0.3",
     "xss-clean": "^0.1.4"

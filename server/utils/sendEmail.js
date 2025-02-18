@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
-dotenv.config()
+dotenv.config();
 import { createTransport } from "nodemailer";
+import { Resend } from "resend";
 
 // Create a transporter
 const transporter = createTransport({
@@ -21,7 +22,7 @@ transporter.verify((error, success) => {
   }
 });
 
-async function sendVerificationEmail(to, token) {
+async function sendVerificationEmail2(to, token) {
   // const verificationLink = `http://localhost:5000/api/v1/auth/verify-email?token=${token}`;
   const verificationLink = `http://localhost:5173/verify/${token}`;
 
@@ -43,5 +44,30 @@ async function sendVerificationEmail(to, token) {
     console.error("Error sending verification email:", error);
   }
 }
+
+async function sendVerificationEmail(to, token) {
+  const resend = new Resend(process.env.EMAIL_API_KEY);
+  const verificationLink = `https://qp2p.onrender.com//verify/${token}`;
+ 
+  // Convert 'to' to a proper string format
+  to = Array.isArray(to)
+    ? to.join(",")
+    : typeof to === "object" && to.email
+    ? to.email.toString()
+    : String(to);
+
+ 
+  await resend.emails.send({
+    from: "QP2p@support.dev",
+    to: to, // Now safely converted to a string
+    subject: "Qp2p Email Verification",
+    html: `
+      <h1>Welcome to QP2P</h1>
+      <p>Click the link below to verify your email address:</p>
+      <a href="${verificationLink}">Verify Email</a>
+    `,
+  });
+}
+
 
 export default sendVerificationEmail;
