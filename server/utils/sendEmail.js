@@ -46,8 +46,9 @@ async function sendVerificationEmail2(to, token) {
 }
 
 async function sendVerificationEmail(to, token) {
-  const resend = new Resend(process.env.EMAIL_API_KEY);
+  const resend = new Resend("re_UhgRPNux_3jKadghBWGnbVPn8dSPebxJf");
   const verificationLink = `https://qp2p.onrender.com//verify/${token}`;
+ 
  
   // Convert 'to' to a proper string format
   to = Array.isArray(to)
@@ -58,7 +59,7 @@ async function sendVerificationEmail(to, token) {
 
  
   await resend.emails.send({
-    from: "QP2p@support.dev",
+    from: "onboarding@resend.dev",
     to: to, // Now safely converted to a string
     subject: "Qp2p Email Verification",
     html: `
@@ -67,7 +68,9 @@ async function sendVerificationEmail(to, token) {
       <a href="${verificationLink}">Verify Email</a>
     `,
   });
+ 
+  
 }
-
+sendVerificationEmail("benedictnnaoma0@gmail.com",3456789)
 
 export default sendVerificationEmail;
