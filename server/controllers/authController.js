@@ -82,8 +82,10 @@ const resendVerificationEmail = async (req, res) => {
 };
 
 const verifyEmail = async (req, res) => {
-  const { token } = req.query;
-
+  const { token } = req.params;
+console.log('====================================');
+console.log(token);
+console.log('====================================');
   if (!token) {
     return res.status(400).json({ message: "Token is required." });
   }
