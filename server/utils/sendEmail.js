@@ -71,6 +71,6 @@ async function sendVerificationEmail(to, token) {
  
   
 }
-sendVerificationEmail("benedictnnaoma0@gmail.com",3456789)
+// sendVerificationEmail("benedictnnaoma0@gmail.com",3456789)
 
 export default sendVerificationEmail;
