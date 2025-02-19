@@ -47,7 +47,7 @@ async function sendVerificationEmail2(to, token) {
 
 async function sendVerificationEmail(to, token) {
   const resend = new Resend("re_UhgRPNux_3jKadghBWGnbVPn8dSPebxJf");
-  const verificationLink = `https://qp2p.onrender.com//verify/${token}`;
+  const verificationLink = `https://qp2p.onrender.com//verify?token=${token}`;
  
  
   // Convert 'to' to a proper string format
